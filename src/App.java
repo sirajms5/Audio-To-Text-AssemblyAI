@@ -17,8 +17,10 @@ public class App {
         ApiKey apiKey = new ApiKey();
         final String KEY = apiKey.getKey(); // this variable will have the API key, make sure to use your own key.
 
+        User user = new User();
+        String userInput = user.inputString("Enter URL for the audio to be converted: ");
         Transcript transcript = new Transcript();
-        transcript.setAudio_url("https://sirajsaleem.com/web/test.mp3");
+        transcript.setAudio_url(userInput);
         Gson gson = new Gson();
         String jsonRequest = gson.toJson(transcript); // will convert the provided link into json format
         System.out.println(jsonRequest);
