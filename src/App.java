@@ -56,7 +56,9 @@ public class App {
 
         if(transcript.getStatus().equals("completed")){
             System.out.println("Transcription completed!");
-            System.out.println(transcript.getText()); // output the text that was converted from the audio
+            String text = transcript.getText();
+            text = text.replaceAll("([?.])(\\s)", "$1\n"); // rearrange the converted audio into seperated lines
+            System.out.println(text); // output the text that was converted from the audio
         } else {
             System.out.println("*** Make sure that the link is for an audio/video file and not a website such as YouTube. ***");
         }        
