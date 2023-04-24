@@ -54,7 +54,11 @@ public class App {
         Thread.sleep(1000);
         } while (!(transcript.getStatus().equals("completed") || transcript.getStatus().equals("error")));
 
-        System.out.println("Transcription completed!");
-        System.out.println(transcript.getText()); // output the text that was converted from the audio
+        if(transcript.getStatus().equals("completed")){
+            System.out.println("Transcription completed!");
+            System.out.println(transcript.getText()); // output the text that was converted from the audio
+        } else {
+            System.out.println("*** Make sure that the link is for an audio/video file and not a website such as YouTube. ***");
+        }        
     }
 }
