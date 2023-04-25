@@ -7,7 +7,7 @@ import com.google.gson.*;
 public class App {
     public static void main(String[] args) throws Exception {
 
-        String option;
+        String option; // loop control variable for multiple entries
         ApiKey apiKey = new ApiKey();
         final String KEY = apiKey.getKey(); // this variable will have the API key, make sure to use your own key.
         User user = new User();
